@@ -27,3 +27,11 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.gitignore
+/.idea/.gitignore
+/.idea/compiler.xml
+/AmbitionSDK.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/src/team/ascension/ambition/sdk/Plugin.java
+/.idea/vcs.xml
