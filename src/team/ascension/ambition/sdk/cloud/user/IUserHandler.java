@@ -24,9 +24,12 @@ package team.ascension.ambition.sdk.cloud.user;
 
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
+import java.util.List;
+
 public interface IUserHandler extends IPacketHandler {
 
     ILocalUser getLocalUser();
     IUser getUser(final int id);
 
+    List<IUser> getUsers();
 }

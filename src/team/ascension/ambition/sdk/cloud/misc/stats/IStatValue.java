@@ -20,9 +20,10 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.user;
+package team.ascension.ambition.sdk.cloud.misc.stats;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+public interface IStatValue {
+    double getValue();
 
-public interface IPartyHandler extends IPacketHandler {
+    long getTimestamp();
 }

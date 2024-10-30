@@ -25,11 +25,13 @@ package team.ascension.ambition.sdk.cloud;
 import team.ascension.ambition.sdk.cloud.channel.IChannelHandler;
 import team.ascension.ambition.sdk.cloud.file.IFileHandler;
 import team.ascension.ambition.sdk.cloud.misc.IAssetHandler;
+import team.ascension.ambition.sdk.cloud.misc.IReportHandler;
 import team.ascension.ambition.sdk.cloud.misc.ISpotifyHandler;
+import team.ascension.ambition.sdk.cloud.misc.stats.IStatisticHandler;
 import team.ascension.ambition.sdk.cloud.misc.cosmetic.ICosmeticHandler;
 import team.ascension.ambition.sdk.cloud.request.IRequestHandler;
 import team.ascension.ambition.sdk.cloud.user.IFriendHandler;
-import team.ascension.ambition.sdk.cloud.user.IPartyHandler;
+import team.ascension.ambition.sdk.cloud.misc.party.IPartyHandler;
 import team.ascension.ambition.sdk.cloud.user.IUserHandler;
 
 public interface ICloudHandler {

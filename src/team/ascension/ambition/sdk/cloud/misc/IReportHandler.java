@@ -20,42 +20,18 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.user;
+package team.ascension.ambition.sdk.cloud.misc;
 
-import java.io.File;
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-public interface ILocalUser extends IUser {
+public interface IReportHandler extends IPacketHandler {
+    void requestReportsBy(int userID);
 
+    void requestReportsAgainst(int userID);
 
-    void setName(String value);
+    void requestAllReports();
 
-    void setBio(String value);
+    void createReport(int userID, String reason, int type);
 
-    void setServer(String server);
-
-    void setUUID(String uuid);
-
-    void setStatus(UserStatus status);
-
-    void setAvatar(File file);
-
-    UserSetting getSessionVisible();
-
-    UserSetting getUuidVisible();
-
-    UserSetting getOpenDMs();
-
-    UserSetting getJoinable();
-
-    void setSessionVisible(UserSetting value);
-
-    void setUuidVisible(UserSetting value);
-
-    void setJoinable(UserSetting value);
-
-    void setOpenDMs(UserSetting value);
-
-    void setSetting(String name, UserSetting value);
-
-    void setAvatar(byte[] texture);
+    void handleReport(int id);
 }

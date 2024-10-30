@@ -20,42 +20,16 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.user;
+package team.ascension.ambition.sdk.cloud.misc.stats;
 
-import java.io.File;
+import java.util.List;
 
-public interface ILocalUser extends IUser {
+public interface IStatTracker {
+    String getName();
 
+    double getLastValue();
 
-    void setName(String value);
+    long getLastTimestamp();
 
-    void setBio(String value);
-
-    void setServer(String server);
-
-    void setUUID(String uuid);
-
-    void setStatus(UserStatus status);
-
-    void setAvatar(File file);
-
-    UserSetting getSessionVisible();
-
-    UserSetting getUuidVisible();
-
-    UserSetting getOpenDMs();
-
-    UserSetting getJoinable();
-
-    void setSessionVisible(UserSetting value);
-
-    void setUuidVisible(UserSetting value);
-
-    void setJoinable(UserSetting value);
-
-    void setOpenDMs(UserSetting value);
-
-    void setSetting(String name, UserSetting value);
-
-    void setAvatar(byte[] texture);
+    List<IStatValue> getPoints();
 }

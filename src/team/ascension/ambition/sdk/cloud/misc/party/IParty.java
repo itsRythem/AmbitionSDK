@@ -20,42 +20,16 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.user;
+package team.ascension.ambition.sdk.cloud.misc.party;
 
-import java.io.File;
+import team.ascension.ambition.sdk.cloud.user.IUser;
 
-public interface ILocalUser extends IUser {
+import java.util.ArrayList;
 
+public interface IParty {
+    int getId();
 
-    void setName(String value);
+    IUser getLeader();
 
-    void setBio(String value);
-
-    void setServer(String server);
-
-    void setUUID(String uuid);
-
-    void setStatus(UserStatus status);
-
-    void setAvatar(File file);
-
-    UserSetting getSessionVisible();
-
-    UserSetting getUuidVisible();
-
-    UserSetting getOpenDMs();
-
-    UserSetting getJoinable();
-
-    void setSessionVisible(UserSetting value);
-
-    void setUuidVisible(UserSetting value);
-
-    void setJoinable(UserSetting value);
-
-    void setOpenDMs(UserSetting value);
-
-    void setSetting(String name, UserSetting value);
-
-    void setAvatar(byte[] texture);
+    ArrayList<IUser> getMembers();
 }

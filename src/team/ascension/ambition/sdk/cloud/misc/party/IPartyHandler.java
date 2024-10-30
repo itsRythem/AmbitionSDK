@@ -20,42 +20,34 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.user;
+package team.ascension.ambition.sdk.cloud.misc.party;
 
-import java.io.File;
+import com.google.gson.JsonObject;
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-public interface ILocalUser extends IUser {
+import java.util.HashSet;
+import java.util.function.Consumer;
 
+public interface IPartyHandler extends IPacketHandler {
+    void registerCallback(PartyAction action, Consumer<JsonObject> callback);
 
-    void setName(String value);
+    void sendAction(PartyAction action, JsonObject info);
 
-    void setBio(String value);
+    void acceptCurrentInvite(int id);
 
-    void setServer(String server);
+    void createParty();
 
-    void setUUID(String uuid);
+    void invitePlayer(int userId);
 
-    void setStatus(UserStatus status);
+    void kickPlayer(int userId);
 
-    void setAvatar(File file);
+    void disband();
 
-    UserSetting getSessionVisible();
+    boolean isInParty();
 
-    UserSetting getUuidVisible();
+    boolean isLeader();
 
-    UserSetting getOpenDMs();
+    IParty getCurrentParty();
 
-    UserSetting getJoinable();
-
-    void setSessionVisible(UserSetting value);
-
-    void setUuidVisible(UserSetting value);
-
-    void setJoinable(UserSetting value);
-
-    void setOpenDMs(UserSetting value);
-
-    void setSetting(String name, UserSetting value);
-
-    void setAvatar(byte[] texture);
+    HashSet<Integer> getPendingInvites();
 }
