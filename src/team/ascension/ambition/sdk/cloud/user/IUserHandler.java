@@ -25,8 +25,13 @@ package team.ascension.ambition.sdk.cloud.user;
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public interface IUserHandler extends IPacketHandler {
+
+    void registerUpdateCallback(BiConsumer<IUser, IUser> callback);
+
+    void requestUserInfo(int userId);
 
     ILocalUser getLocalUser();
     IUser getUser(final int id);
