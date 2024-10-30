@@ -20,20 +20,19 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.request;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacket;
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+public interface IRequestHandler extends IPacketHandler {
 
-    boolean isEnabled();
+    String sendRequest(final IPacket packet);
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    IResponsePacket makeRequest(final IPacket packet);
 
-    void toggle();
+    IResponsePacket makeRequest(final IPacket packet, long timeout);
+
+    IResponsePacket getResponse(final String id);
 
 }

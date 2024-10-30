@@ -20,20 +20,21 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.misc;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+public interface IAssetHandler extends IPacketHandler {
 
-    boolean isEnabled();
+    int getAsset(final int id);
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    int getAsset(int assetID, int width, int height);
 
-    void toggle();
+    int createAsset(byte[] texture);
 
+    void updateAsset(int id, byte[] texture);
+
+    int getDefaultAvatarTexture();
+
+    boolean hasLoadedDefaults();
 }

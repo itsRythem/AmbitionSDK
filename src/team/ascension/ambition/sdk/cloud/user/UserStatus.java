@@ -20,20 +20,23 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.user;
 
-public interface IModule {
+import java.awt.*;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+public enum UserStatus {
 
-    boolean isEnabled();
+    OFFLINE("Offline", 0, new Color(160, 156, 156)),
+    ONLINE("Online", 1, new Color(114, 200, 78)),
+    DO_NOT_DISTURB("Do Not Disturb", 2, new Color(244, 89, 89));
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
+    public final String name;
+    public final int id;
+    public final Color color;
+    UserStatus(final String name, final int id, final Color color) {
+        this.name = name;
+        this.id = id;
+        this.color = color;
+    }
 
 }

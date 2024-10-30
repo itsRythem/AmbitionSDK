@@ -20,20 +20,26 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.channel;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.cloud.user.IUser;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+import java.util.ArrayList;
+import java.util.List;
 
-    boolean isEnabled();
+public interface IChannelHandler extends IPacketHandler {
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    void sendMessage(final String message, final int channel);
 
-    void toggle();
+    void deleteMessage(int message, int channel);
+
+    List<IMessage> getMessages(final int channel);
+
+    List<IUser> getTyping(final int channel);
+
+    IChannel getChannel(final int channel);
+
+    void getHistory(final int start, final int end, final int channel);
 
 }

@@ -20,20 +20,25 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.channel;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.user.IUser;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+import java.util.ArrayList;
+import java.util.List;
 
-    boolean isEnabled();
+public interface IChannel {
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    void sendMessage(final String message);
 
-    void toggle();
+    void deleteMessage(final int message);
+
+    IMessage getMessage(final int message);
+
+    List<IMessage> getMessages();
+
+    void requestHistory(final int start, final int end);
+
+    List<IUser> getTyping();
 
 }

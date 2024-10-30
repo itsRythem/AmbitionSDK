@@ -20,20 +20,33 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.user;
 
-public interface IModule {
+public enum UserSetting {
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+    PRIVATE(0, 0),
+    FRIENDS(1, 0),
+    PUBLIC(2, 0),
+    FRIENDLY(0, 1),
+    MUTUAL(1, 1),
+    AGGRESSIVE(2, 1);
 
-    boolean isEnabled();
+    private final int value, type;
+    UserSetting(int value, int type) {
+        this.value = value;
+        this.type = type;
+    }
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    public int getValue() {
+        return value;
+    }
 
-    void toggle();
-
+    public static UserSetting fromValue(int value, int type) {
+        for (UserSetting s : UserSetting.values()) {
+            if (s.value == value && s.type == type) {
+                return s;
+            }
+        }
+        return null;
+    }
 }

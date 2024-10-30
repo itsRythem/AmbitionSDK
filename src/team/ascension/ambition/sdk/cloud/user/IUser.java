@@ -20,20 +20,38 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.user;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.misc.cosmetic.ICosmetic;
+
+import java.util.List;
+
+public interface IUser {
+
+    boolean hasPermission(UserType level);
+
+    int getId();
+
+    UserStatus getCurrentStatus();
+
+    UserType getType();
 
     String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
 
-    boolean isEnabled();
+    boolean isFriend();
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    int getAvatarID();
 
-    void toggle();
+    String getCurrentUUID();
+
+    String getCurrentServerIP();
+
+    String getBio();
+
+    int getAvatarTexture();
+
+    List<Integer> getCosmeticIDs();
+
+    List<ICosmetic> getCosmetics();
 
 }

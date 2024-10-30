@@ -20,19 +20,10 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.socket;
+package team.ascension.ambition.sdk.cloud.user;
 
-import team.ascension.ambition.sdk.cloud.IPacket;
+public interface ILocalUser extends IUser {
 
-public interface ISocketClient {
 
-    void initialize();
-
-    void connect(final String host, final int port);
-    void disconnect();
-
-    void send(final IPacket packet);
-
-    boolean isConnected();
 
 }

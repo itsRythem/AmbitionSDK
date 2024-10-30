@@ -20,20 +20,31 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.file;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+import java.util.List;
+import java.util.Map;
 
-    boolean isEnabled();
+public interface IFileHandler extends IPacketHandler {
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    String getFile(final String path);
 
-    void toggle();
+    List<FileEntry> listFiles(final String path);
+
+    Map<String, String> getFiles(final String path);
+
+    int getStorageRemaining();
+
+    int getStorageUsed();
+
+    boolean createFile(final String path, final boolean replace);
+
+    boolean writeFile(final String path, final String contents);
+
+    boolean deleteFile(final String path);
+
+    boolean fileExists(final String path);
 
 }

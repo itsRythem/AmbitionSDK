@@ -20,20 +20,27 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.channel;
 
-public interface IModule {
+public interface IMessage {
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+    int getId();
 
-    boolean isEnabled();
+    int getSenderID();
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    int getChannelID();
 
-    void toggle();
+    long getSendTime();
 
+    String getContent();
+
+    boolean isEdited();
+
+    boolean isConfirmed();
+
+    boolean canModify();
+
+    void edit(String content);
+
+    void delete();
 }

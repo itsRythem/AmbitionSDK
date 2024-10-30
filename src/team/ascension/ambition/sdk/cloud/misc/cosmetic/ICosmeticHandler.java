@@ -20,20 +20,18 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.misc.cosmetic;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+import java.util.Collection;
 
-    boolean isEnabled();
+public interface ICosmeticHandler extends IPacketHandler {
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    ICosmetic getCosmetic(final int id);
 
-    void toggle();
+    Collection<ICosmetic> getCosmetics();
+
+    int getCosmeticTexture(int id);
 
 }

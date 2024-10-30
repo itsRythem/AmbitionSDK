@@ -20,20 +20,9 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.user;
 
-public interface IModule {
+import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
-
-    boolean isEnabled();
-
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
-
+public interface IPartyHandler extends IPacketHandler {
 }

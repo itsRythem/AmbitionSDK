@@ -20,20 +20,17 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.file;
 
-public interface IModule {
+public final class FileEntry {
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
-
-    boolean isEnabled();
-
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
+    public final String name, path, directory;
+    public final boolean isDirectory;
+    public FileEntry(final String name, final String path, final String directory, final boolean isDirectory) {
+        this.name = name;
+        this.path = path;
+        this.directory = directory;
+        this.isDirectory = isDirectory;
+    }
 
 }

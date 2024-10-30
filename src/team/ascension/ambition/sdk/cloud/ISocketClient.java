@@ -20,20 +20,20 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud;
 
-public interface IModule {
+import com.google.gson.JsonObject;
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+public interface ISocketClient {
 
-    boolean isEnabled();
+    void initialize();
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
+    void connect(final String host, final int port);
+    void disconnect();
+    boolean isConnected();
 
-    void toggle();
+    void send(final IPacket packet);
+    void send(final int id, final JsonObject body);
+    void send(final int id);
 
 }

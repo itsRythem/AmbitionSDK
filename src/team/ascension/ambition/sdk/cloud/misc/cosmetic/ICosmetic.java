@@ -20,20 +20,12 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.misc.cosmetic;
 
-public interface IModule {
+public interface ICosmetic {
 
     String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
-
-    boolean isEnabled();
-
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
+    int getId();
+    int getAssetID();
 
 }

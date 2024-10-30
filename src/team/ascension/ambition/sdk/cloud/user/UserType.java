@@ -20,20 +20,26 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.cloud.user;
 
-public interface IModule {
+public enum UserType {
 
-    String getName();
-    String getDescription();
-    String getSuffix();
-    Category getCategory();
+    NORMAL("Normal"),
+    LOYAL("Loyal"),
+    SUPPORTER("Supporter"),
+    MEDIA("Media"),
+    BETA("Beta"),
+    CONTRIBUTOR("Contributor"),
+    ADMIN("Admin"),
+    DEVELOPER("Developer");
 
-    boolean isEnabled();
+    final String name;
+    UserType(String name) {
+        this.name = name;
+    }
 
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
+    public String getName() {
+        return name;
+    }
 
 }
