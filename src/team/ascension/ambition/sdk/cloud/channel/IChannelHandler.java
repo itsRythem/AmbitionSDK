@@ -38,6 +38,8 @@ public interface IChannelHandler extends IPacketHandler {
 
     List<IUser> getTyping(final int channel);
 
+    IMessage getMessage(int index, int channelID);
+
     IChannel getChannel(final int channel);
 
     void getHistory(final int start, final int end, final int channel);

@@ -41,4 +41,13 @@ public interface IChannel {
 
     List<IUser> getTyping();
 
+    int getMessageCount();
+
+    void requestHistory(int minIndex);
+
+    int getId();
+
+    ChannelType getType();
+
+    void setMessageCount(int messageCount);
 }

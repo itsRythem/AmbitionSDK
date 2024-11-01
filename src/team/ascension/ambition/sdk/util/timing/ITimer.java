@@ -20,10 +20,24 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.minecraft.util;
+package team.ascension.ambition.sdk.util.timing;
 
-public interface IResourceLocation {
+public interface ITimer {
+    boolean hasElapsedMillis(long ms, boolean reset);
 
+    boolean hasElapsedMillis(long ms);
 
+    boolean hasElapsedSeconds(long seconds, boolean reset);
 
+    boolean hasElapsedTicks(int ticks, boolean reset);
+
+    boolean hasElapsedSeconds(long seconds);
+
+    boolean hasElapsedTimeForFrames(long frames, boolean reset);
+
+    boolean hasElapsedTimeForFrames(long frames);
+
+    long getTimeElapsedMillis();
+
+    void reset();
 }

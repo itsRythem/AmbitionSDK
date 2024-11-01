@@ -20,35 +20,26 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.setting;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import com.google.gson.JsonObject;
 
-import java.util.List;
-import java.util.Map;
+public interface ISettingHolder<T> {
 
-public interface IFileHandler extends IPacketHandler {
+    Runnable getListener();
 
-    String getFile(final String path);
+    void setListener(final Runnable runnable);
 
-    List<FileEntry> listFiles(final String path);
+    void onChangeValue();
 
-    Map<String, String> getFiles(final String path);
+    T getValue();
 
-    int getMaxStorage();
+    void setValue(final T value);
 
-    int getStorageRemaining();
+    boolean isEnabled();
 
-    int getStorageUsed();
+    JsonObject serialize();
 
-    boolean createFile(final String path, final boolean replace);
-
-    boolean createFile(final String path);
-
-    boolean writeFile(final String path, final String contents);
-
-    boolean deleteFile(final String path);
-
-    boolean fileExists(final String path);
+    boolean deserialize(final JsonObject object);
 
 }

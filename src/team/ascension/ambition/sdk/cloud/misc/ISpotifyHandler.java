@@ -25,4 +25,7 @@ package team.ascension.ambition.sdk.cloud.misc;
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
 
 public interface ISpotifyHandler extends IPacketHandler {
+    void authorize();
+
+    String getToken();
 }

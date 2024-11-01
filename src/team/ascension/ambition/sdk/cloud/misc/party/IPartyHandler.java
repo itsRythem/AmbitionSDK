@@ -24,11 +24,14 @@ package team.ascension.ambition.sdk.cloud.misc.party;
 
 import com.google.gson.JsonObject;
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.minecraft.client.entity.IAbstractClientPlayer;
+import team.ascension.ambition.sdk.minecraft.entity.player.IEntityPlayer;
 
 import java.util.HashSet;
 import java.util.function.Consumer;
 
 public interface IPartyHandler extends IPacketHandler {
+
     void registerCallback(PartyAction action, Consumer<JsonObject> callback);
 
     void sendAction(PartyAction action, JsonObject info);
@@ -45,9 +48,12 @@ public interface IPartyHandler extends IPacketHandler {
 
     boolean isInParty();
 
+    boolean isInParty(final IEntityPlayer player);
+
     boolean isLeader();
 
     IParty getCurrentParty();
 
     HashSet<Integer> getPendingInvites();
+
 }

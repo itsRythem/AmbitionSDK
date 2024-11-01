@@ -22,10 +22,19 @@
 
 package team.ascension.ambition.sdk.module;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import team.ascension.ambition.sdk.setting.ISetting;
+
+import java.util.List;
+
 public interface IModule {
 
     String getName();
     String getDescription();
+
+    ISetting<?> getKeybind();
+
     String getSuffix();
     Category getCategory();
 
@@ -35,5 +44,14 @@ public interface IModule {
     void setEnabled(final boolean state);
 
     void toggle();
+
+    List<ISetting<?>> getSettings();
+
+    default JsonObject serialize() {
+        return null;
+    }
+
+    default void deserialize() {
+    }
 
 }

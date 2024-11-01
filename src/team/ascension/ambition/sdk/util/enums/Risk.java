@@ -20,35 +20,27 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.util.enums;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.util.jplus.INamedObject;
 
-import java.util.List;
-import java.util.Map;
+public enum Risk implements INamedObject {
 
-public interface IFileHandler extends IPacketHandler {
+    UNKNOWN("Unknown", "This setting has an unknown risk"),
+    NONE("None", "This setting has no risk"),
+    LOW("Low", "This setting has a low risk"),
+    MEDIUM("Medium", "This setting has a medium risk"),
+    HIGH("High", "This setting has a high risk");
 
-    String getFile(final String path);
+    public final String name, description;
+    Risk(final String name, final String description) {
+        this.name = name;
+        this.description = description;
+    }
 
-    List<FileEntry> listFiles(final String path);
-
-    Map<String, String> getFiles(final String path);
-
-    int getMaxStorage();
-
-    int getStorageRemaining();
-
-    int getStorageUsed();
-
-    boolean createFile(final String path, final boolean replace);
-
-    boolean createFile(final String path);
-
-    boolean writeFile(final String path, final String contents);
-
-    boolean deleteFile(final String path);
-
-    boolean fileExists(final String path);
+    @Override
+    public String getName() {
+        return this.name;
+    }
 
 }

@@ -37,6 +37,8 @@ public interface ILocalUser extends IUser {
 
     void setStatus(UserStatus status);
 
+    void setStatus(int status);
+
     void setAvatar(File file);
 
     UserSetting getSessionVisible();

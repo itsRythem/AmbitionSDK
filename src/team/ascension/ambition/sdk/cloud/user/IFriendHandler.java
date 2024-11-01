@@ -23,9 +23,24 @@
 package team.ascension.ambition.sdk.cloud.user;
 
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.minecraft.entity.player.IEntityPlayer;
+
+import java.util.ArrayList;
 
 public interface IFriendHandler extends IPacketHandler {
 
     boolean isFriend(final IUser user);
+
+    ArrayList<IUser> getFriends();
+
+    ArrayList<IUser> getOutgoing();
+
+    ArrayList<IUser> getIncoming();
+
+    void addFriend(int friend_id);
+
+    void removeFriend(int friend_id);
+
+    boolean isFriend(IEntityPlayer player);
 
 }

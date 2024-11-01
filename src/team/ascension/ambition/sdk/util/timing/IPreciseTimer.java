@@ -20,35 +20,16 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.util.timing;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+public interface IPreciseTimer extends ITimer {
 
-import java.util.List;
-import java.util.Map;
+    float getTimeElapsedMillisDec();
 
-public interface IFileHandler extends IPacketHandler {
+    long getTimeElapsedNano();
 
-    String getFile(final String path);
+    boolean hasElapsedMillisDecSub(float ms, boolean subtract);
 
-    List<FileEntry> listFiles(final String path);
-
-    Map<String, String> getFiles(final String path);
-
-    int getMaxStorage();
-
-    int getStorageRemaining();
-
-    int getStorageUsed();
-
-    boolean createFile(final String path, final boolean replace);
-
-    boolean createFile(final String path);
-
-    boolean writeFile(final String path, final String contents);
-
-    boolean deleteFile(final String path);
-
-    boolean fileExists(final String path);
+    boolean hasElapsedMillisDec(float ms, boolean reset);
 
 }

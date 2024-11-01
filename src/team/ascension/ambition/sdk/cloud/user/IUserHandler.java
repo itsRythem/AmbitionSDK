@@ -23,6 +23,8 @@
 package team.ascension.ambition.sdk.cloud.user;
 
 import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.minecraft.client.entity.IAbstractClientPlayer;
+import team.ascension.ambition.sdk.minecraft.client.network.INetworkPlayerInfo;
 
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -36,5 +38,13 @@ public interface IUserHandler extends IPacketHandler {
     ILocalUser getLocalUser();
     IUser getUser(final int id);
 
+    IUser getUser(IAbstractClientPlayer player);
+
     List<IUser> getUsers();
+
+    IUser getUser(INetworkPlayerInfo info);
+
+    boolean isUser(INetworkPlayerInfo info);
+
+    boolean isUser(IAbstractClientPlayer player);
 }

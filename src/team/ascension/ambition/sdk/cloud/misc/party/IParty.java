@@ -27,9 +27,11 @@ import team.ascension.ambition.sdk.cloud.user.IUser;
 import java.util.ArrayList;
 
 public interface IParty {
+
     int getId();
 
     IUser getLeader();
 
     ArrayList<IUser> getMembers();
+
 }

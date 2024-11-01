@@ -35,4 +35,6 @@ public interface IModuleHandler {
     List<IModule> getAll();
     List<IModule> getAll(final Category category);
 
+    void cache();
+
 }

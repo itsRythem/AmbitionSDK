@@ -22,11 +22,10 @@
 
 package team.ascension.ambition.sdk.file;
 
-import team.ascension.ambition.sdk.minecraft.util.IResourceLocation;
+import team.ascension.ambition.sdk.minecraft.util.ResourceLocation;
 
 import java.io.File;
 import java.util.List;
-import java.util.Map;
 
 public interface IFileHandler {
 
@@ -45,10 +44,10 @@ public interface IFileHandler {
 
     List<File> list(final File directory);
 
-    boolean extract(final IResourceLocation resource, final File target, final boolean overwrite);
-    boolean extract(final IResourceLocation resource, final File target);
+    boolean extract(final ResourceLocation resource, final File target, final boolean overwrite);
+    boolean extract(final ResourceLocation resource, final File target);
 
-    IResourceLocation getResource(final String path);
-    int getResourceId(final IResourceLocation resource);
+    ResourceLocation getResource(final String path);
+    int getResourceId(final ResourceLocation resource);
 
 }

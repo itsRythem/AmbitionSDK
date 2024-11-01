@@ -20,35 +20,39 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.setting;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.BuildType;
+import team.ascension.ambition.sdk.util.enums.Recommendation;
+import team.ascension.ambition.sdk.util.enums.Risk;
+import team.ascension.ambition.sdk.util.timing.ITimer;
 
-import java.util.List;
-import java.util.Map;
+import java.util.function.Supplier;
 
-public interface IFileHandler extends IPacketHandler {
+public interface ISetting<T extends ISettingHolder<?>> {
 
-    String getFile(final String path);
+    ITimer getTimer();
 
-    List<FileEntry> listFiles(final String path);
+    T getHolder();
 
-    Map<String, String> getFiles(final String path);
+    ISetting<?> getParent();
 
-    int getMaxStorage();
+    BuildType getBuildLevel();
 
-    int getStorageRemaining();
+    String getName();
 
-    int getStorageUsed();
+    String getDescription();
 
-    boolean createFile(final String path, final boolean replace);
+    ISetting<?>[] getChildren();
 
-    boolean createFile(final String path);
+    Recommendation getRecommendation();
 
-    boolean writeFile(final String path, final String contents);
+    Supplier<Boolean> getCondition();
 
-    boolean deleteFile(final String path);
+    boolean isEnabled();
 
-    boolean fileExists(final String path);
+    void reset();
+
+    Risk getRisk();
 
 }

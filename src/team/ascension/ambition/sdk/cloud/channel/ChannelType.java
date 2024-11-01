@@ -20,35 +20,39 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.cloud.channel;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.util.jplus.INamedObject;
 
-import java.util.List;
-import java.util.Map;
+public enum ChannelType implements INamedObject {
 
-public interface IFileHandler extends IPacketHandler {
+    GLOBAL("Global", 0),
+    PRIVATE("Private", 1),
+    GROUP("Group", 2);
 
-    String getFile(final String path);
+    private final String name;
+    private final int index;
+    ChannelType(final String name, final int index) {
+        this.name = name;
+        this.index = index;
+    }
 
-    List<FileEntry> listFiles(final String path);
+    @Override
+    public String getName() {
+        return this.name;
+    }
 
-    Map<String, String> getFiles(final String path);
+    public int getIndex() {
+        return this.index;
+    }
 
-    int getMaxStorage();
-
-    int getStorageRemaining();
-
-    int getStorageUsed();
-
-    boolean createFile(final String path, final boolean replace);
-
-    boolean createFile(final String path);
-
-    boolean writeFile(final String path, final String contents);
-
-    boolean deleteFile(final String path);
-
-    boolean fileExists(final String path);
+    public static ChannelType valueOf(final int index) {
+        for (final ChannelType type : values()) {
+            if (type.index == index) {
+                return type;
+            }
+        }
+        return null;
+    }
 
 }

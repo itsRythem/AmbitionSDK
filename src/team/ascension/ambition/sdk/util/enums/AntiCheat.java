@@ -20,33 +20,59 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.util.enums;
 
-public final class FileEntry {
+import team.ascension.ambition.sdk.util.jplus.INamedObject;
 
-    private final String name, path, directory;
-    private final boolean isDirectory;
-    public FileEntry(final String name, final String path, final String directory, final boolean isDirectory) {
+/* if you make a anticheat specific bypass for an anticheat not here, just add it :) */
+public enum AntiCheat implements INamedObject {
+
+    UNKNOWN("Unknown"),
+    ANY("Any"),
+    NONE("None"),
+    NCP("NCP"),
+    UPDATED_NCP("Updated NCP"),
+    MATRIX("Matrix"),
+    VULCAN("Vulcan"),
+    ANTI_AURA_1("Anti Aura 1.0"),
+    ANTI_AURA_2("Anti Aura 2.0"),
+    NEGATIVITY_1("Negativity 1.0"),
+    NEGATIVITY_2("Negativity 2.0"),
+    WRAITH("Wraith"),
+    HAWK("Hawk"),
+    FREQUENCY("Frequency"),
+    KAURI("Kauri"),
+    MEDUSA("Medusa"),
+    ALICE("Alice"),
+    INTAVE("Intave"),
+    BUZZ("Buzz"),
+    VERUS("Verus"),
+    HORIZON("Horizon"),
+    HADES("Hades"),
+    FOX_ADDITION("Fox Addition"),
+    ACR("ACR"),
+    NESS("Ness"),
+    GODS_EYE("Gods Eye"),
+    AAC_5("AAC 5.0"),
+    AAC_3("AAC 3.0"),
+    SPARTAN("Spartan"),
+    POLAR("Polar"),
+    ASTRO("Astro"),
+    WATCHDOG("Watchdog"),
+    KARHU("Karhu"),
+    NESS_RELOADED("Ness Reloaded"),
+    NOVA("Nova"),
+    SPARKY("Sparky"),
+    GRIM("Grim");
+
+    public final String name;
+    AntiCheat(final String name) {
         this.name = name;
-        this.path = path;
-        this.directory = directory;
-        this.isDirectory = isDirectory;
     }
 
+    @Override
     public String getName() {
         return this.name;
-    }
-
-    public String getPath() {
-        return this.path;
-    }
-
-    public String getDirectory() {
-        return this.directory;
-    }
-
-    public boolean isDirectory() {
-        return this.isDirectory;
     }
 
 }

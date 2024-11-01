@@ -20,35 +20,24 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.cloud.file;
+package team.ascension.ambition.sdk.util.enums;
 
-import team.ascension.ambition.sdk.cloud.IPacketHandler;
+import team.ascension.ambition.sdk.util.jplus.INamedObject;
 
-import java.util.List;
-import java.util.Map;
+public enum Recommendation implements INamedObject {
 
-public interface IFileHandler extends IPacketHandler {
+    NONE("None"),
+    UNRECOMMENDED("Unrecommended"),
+    RECOMMENDED("Recommended");
 
-    String getFile(final String path);
+    public final String name;
+    Recommendation(final String name) {
+        this.name = name;
+    }
 
-    List<FileEntry> listFiles(final String path);
-
-    Map<String, String> getFiles(final String path);
-
-    int getMaxStorage();
-
-    int getStorageRemaining();
-
-    int getStorageUsed();
-
-    boolean createFile(final String path, final boolean replace);
-
-    boolean createFile(final String path);
-
-    boolean writeFile(final String path, final String contents);
-
-    boolean deleteFile(final String path);
-
-    boolean fileExists(final String path);
+    @Override
+    public String getName() {
+        return this.name;
+    }
 
 }
