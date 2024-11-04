@@ -10,12 +10,13 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/IdeaProjects/AmbitionClient/dependencies/jar" />
+          <root url="file://$MODULE_DIR$/dependencies" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/IdeaProjects/AmbitionClient/dependencies/jar" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/dependencies" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="dependencies" level="project" />
   </component>
 </module>

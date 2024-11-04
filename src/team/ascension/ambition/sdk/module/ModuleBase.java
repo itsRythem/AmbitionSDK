@@ -95,6 +95,10 @@ public abstract class ModuleBase implements IModule {
 
     @Override
     public boolean deserialize(final JsonObject object) {
+        if (object == null) {
+            return false;
+        }
+
         if (object.has("enabled")) {
             this.setEnabled(object.get("enabled").getAsBoolean(), true);
         }

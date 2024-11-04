@@ -23,7 +23,6 @@
 package team.ascension.ambition.sdk.minecraft.client.network;
 
 import com.mojang.authlib.GameProfile;
-import team.ascension.ambition.sdk.cloud.user.IUser;
 
 public interface INetworkPlayerInfo {
 
