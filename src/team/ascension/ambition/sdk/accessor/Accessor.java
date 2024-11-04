@@ -20,36 +20,12 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.accessor;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import team.ascension.ambition.sdk.setting.ISetting;
+import team.ascension.ambition.sdk.event.IEventBus;
 
-import java.util.List;
+public final class Accessor {
 
-public interface IModule {
-
-    String getName();
-    String getDescription();
-
-    ISetting<?> getKeybind();
-
-    String getSuffix();
-    Category getCategory();
-
-    boolean isEnabled();
-
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void toggle();
-
-    void registerSettings(ISetting<?>... settings);
-
-    List<ISetting<?>> getSettings();
-
-    JsonObject serialize();
-    boolean deserialize(final JsonObject object);
+    public static IEventBus getEventBus() { throw new UnsupportedOperationException(); }
 
 }
