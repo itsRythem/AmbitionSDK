@@ -20,40 +20,10 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.module;
+package team.ascension.ambition.sdk.event.impl;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import team.ascension.ambition.sdk.setting.ISetting;
+import team.ascension.ambition.sdk.event.IEvent;
 
-import java.util.List;
-
-public interface IModule {
-
-    String getName();
-    String getDescription();
-
-    ISetting<?> getKeybind();
-
-    String getSuffix();
-    Category getCategory();
-
-    boolean isEnabled();
-
-    void setEnabled(final boolean state, final boolean silent);
-    void setEnabled(final boolean state);
-
-    void register(final boolean state, final boolean silent);
-    void registerSettings(final ISetting<?>... settings);
-
-    void toggle();
-
-    void onEnable();
-    void onDisable();
-
-    List<ISetting<?>> getSettings();
-
-    JsonObject serialize();
-    boolean deserialize(final JsonObject object);
+public interface ITickEvent extends IEvent {
 
 }
