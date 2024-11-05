@@ -28,6 +28,6 @@ public interface IEventBus {
     void unregister(final Object object);
     void clear();
 
-    void invoke(final IEvent event);
+    void invoke(final Event event);
 
 }

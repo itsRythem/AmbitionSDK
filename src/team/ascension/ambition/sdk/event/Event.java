@@ -22,9 +22,62 @@
 
 package team.ascension.ambition.sdk.event;
 
-public interface IEvent extends Cancellable {
+public class Event {
 
-    EventStage getStage();
-    void setStage(final EventStage stage);
+    public EventStage stage;
+    public boolean cancelled;
+
+    public Event(final EventStage stage, final boolean cancelled) {
+        this.stage = stage;
+        this.cancelled = cancelled;
+    }
+
+    public Event(final EventStage stage) {
+        this(stage, false);
+    }
+
+    public Event(final boolean cancelled) {
+        this(null, cancelled);
+    }
+
+    public Event() {
+        this(null, false);
+    }
+
+    public EventStage getStage() {
+        return this.stage;
+    }
+
+    public void setStage(final EventStage stage) {
+        this.stage = stage;
+    }
+
+    public boolean isCancelled() {
+        return this.cancelled;
+    }
+
+    public void setCancelled(final boolean cancelled) {
+        this.cancelled = cancelled;
+    }
+
+    public void cancel() {
+        this.cancelled = true;
+    }
+
+    public boolean isPre() {
+        return this.stage == EventStage.PRE;
+    }
+
+    public boolean isPost() {
+        return this.stage == EventStage.POST;
+    }
+
+    public boolean isIncoming() {
+        return this.stage == EventStage.INCOMING;
+    }
+
+    public boolean isOutgoing() {
+        return this.stage == EventStage.OUTGOING;
+    }
 
 }

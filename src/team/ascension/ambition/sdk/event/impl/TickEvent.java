@@ -22,8 +22,13 @@
 
 package team.ascension.ambition.sdk.event.impl;
 
-import team.ascension.ambition.sdk.event.IEvent;
+import team.ascension.ambition.sdk.event.Event;
+import team.ascension.ambition.sdk.event.EventStage;
 
-public interface ITickEvent extends IEvent {
+public final class TickEvent extends Event {
+
+    public TickEvent(final EventStage stage) {
+        super(stage);
+    }
 
 }
