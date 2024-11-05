@@ -23,6 +23,7 @@
 package team.ascension.ambition.sdk;
 
 import team.ascension.ambition.sdk.cloud.ICloudHandler;
+import team.ascension.ambition.sdk.event.IEventBus;
 import team.ascension.ambition.sdk.file.IFileHandler;
 import team.ascension.ambition.sdk.module.IModuleHandler;
 import team.ascension.ambition.sdk.notification.INotificationHandler;
@@ -35,6 +36,7 @@ public interface IClient {
     BuildType getBuildType();
     String[] getAuthors();
 
+    IEventBus getEventBus();
     IModuleHandler getModuleHandler();
     ICloudHandler getCloudHandler();
     INotificationHandler getNotificationHandler();

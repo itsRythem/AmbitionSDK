@@ -23,6 +23,99 @@
 package team.ascension.ambition.sdk.minecraft.entity;
 
 import team.ascension.ambition.sdk.minecraft.command.IBaseCommandSender;
+import team.ascension.ambition.sdk.minecraft.entity.player.IEntityPlayer;
 
 public interface IEntity extends IBaseCommandSender {
+    boolean isSprinting();
+
+    void setSprinting(boolean sprinting);
+
+    boolean isInvisible();
+
+    void setInvisible(boolean invisible);
+
+    boolean isEating();
+
+    void setEating(boolean eating);
+
+    boolean getFlag(int flag);
+
+    void setFlag(int flag, boolean set);
+
+    boolean hitByEntity(IEntity entityIn);
+
+    double getPosX();
+
+    double getPosY();
+
+    double getPosZ();
+
+    double getPrevPosX();
+
+    double getPrevPosY();
+
+    double getPrevPosZ();
+
+    double getLastTickPosX();
+
+    double getLastTickPosY();
+
+    double getLastTickPosZ();
+
+    boolean isOnGround();
+
+    void setOnGround(boolean onGround);
+
+    float[] getScreenPosition(float partialTicks);
+
+    float[] getScreenPosition(double renderPosX, double renderPosY, double renderPosZ, float partialTicks);
+
+    int getEntityId();
+
+    boolean canAttackWithItem();
+
+    void setFire(int i);
+
+    void setMotionX(double motionX);
+
+    double getMotionY();
+
+    void setMotionY(double motionY);
+
+    double getMotionZ();
+
+    void setMotionZ(double motionZ);
+
+    float getRotationYaw();
+
+    void setRotationYaw(float rotationYaw);
+
+    float getRotationPitch();
+
+    void setRotationPitch(float rotationPitch);
+
+    float getPrevRotationYaw();
+
+    void setPrevRotationYaw(float prevRotationYaw);
+
+    float getPrevRotationPitch();
+
+    void setPrevRotationPitch(float prevRotationPitch);
+
+    void setLocationAndAngles(double x, double y, double z, float yaw, float pitch);
+
+    float getDistanceToEntity(IEntity entityIn);
+
+    double getDistanceSq(double x, double y, double z);
+
+    double getDistance(double x, double y, double z);
+
+    void addVelocity(double x, double y, double z);
+
+    boolean isBurning();
+
+    double getMotionX();
+
+    void extinguish();
+
 }

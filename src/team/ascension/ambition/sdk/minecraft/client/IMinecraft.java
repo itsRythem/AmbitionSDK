@@ -20,21 +20,34 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.accessor;
+package team.ascension.ambition.sdk.minecraft.client;
 
-import team.ascension.ambition.sdk.IClient;
-import team.ascension.ambition.sdk.minecraft.client.entity.IEntityPlayerSP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IPlayerControllerMP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IWorldClient;
+public interface IMinecraft {
+    void refreshResources();
 
-public final class Accessor {
+    void shutdown();
 
-    public static IClient getClient() { throw new UnsupportedOperationException(); }
+    void setIngameFocus();
 
-    public static IWorldClient getWorld() { throw new UnsupportedOperationException(); }
+    void setIngameNotInFocus();
 
-    public static IEntityPlayerSP getPlayer() { throw new UnsupportedOperationException(); }
+    void displayInGameMenu();
 
-    public static IPlayerControllerMP getPlayerController() { throw new UnsupportedOperationException(); }
+    void clickMouse();
 
+    void rightClickMouse();
+
+    void toggleFullscreen();
+
+    String getCurrentAction();
+
+    boolean isIntegratedServerRunning();
+
+    boolean isSingleplayer();
+
+    boolean isFullScreen();
+
+    boolean isGamePaused();
+
+    void dispatchKeypresses();
 }

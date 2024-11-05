@@ -22,7 +22,9 @@
 
 package team.ascension.ambition.sdk.minecraft.entity.player;
 
+import team.ascension.ambition.sdk.minecraft.entity.IEntity;
 import team.ascension.ambition.sdk.minecraft.entity.IEntityLivingBase;
 
 public interface IEntityPlayer extends IEntityLivingBase {
+    void attackTargetEntityWithCurrentItem(IEntity targetEntity);
 }

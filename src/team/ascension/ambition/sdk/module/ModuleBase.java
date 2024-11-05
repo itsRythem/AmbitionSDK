@@ -50,9 +50,9 @@ public abstract class ModuleBase implements IModule {
     @Override
     public void register(final boolean state, final boolean silent) {
         if (state) {
-            Accessor.getEventBus().register(this);
+            Accessor.getClient().getEventBus().register(this);
         } else {
-            Accessor.getEventBus().unregister(this);
+            Accessor.getClient().getEventBus().unregister(this);
         }
     }
 

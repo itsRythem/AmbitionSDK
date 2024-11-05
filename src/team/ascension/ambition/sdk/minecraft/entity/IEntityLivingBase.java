@@ -23,4 +23,11 @@
 package team.ascension.ambition.sdk.minecraft.entity;
 
 public interface IEntityLivingBase extends IEntity {
+    void heal(float healAmount);
+
+    float getHealth();
+
+    void setHealth(float health);
+
+    boolean isSleeping();
 }

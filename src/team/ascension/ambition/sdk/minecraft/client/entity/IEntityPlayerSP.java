@@ -23,4 +23,11 @@
 package team.ascension.ambition.sdk.minecraft.client.entity;
 
 public interface IEntityPlayerSP extends IAbstractClientPlayer {
+    float getLastReportedYaw();
+
+    void setLastReportedYaw(float lastReportedYaw);
+
+    float getLastReportedPitch();
+
+    void setLastReportedPitch(float lastReportedPitch);
 }

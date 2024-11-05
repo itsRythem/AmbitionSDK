@@ -20,21 +20,9 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.accessor;
+package team.ascension.ambition.sdk.minecraft.client.multiplayer;
 
-import team.ascension.ambition.sdk.IClient;
-import team.ascension.ambition.sdk.minecraft.client.entity.IEntityPlayerSP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IPlayerControllerMP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IWorldClient;
+import team.ascension.ambition.sdk.minecraft.world.IWorld;
 
-public final class Accessor {
-
-    public static IClient getClient() { throw new UnsupportedOperationException(); }
-
-    public static IWorldClient getWorld() { throw new UnsupportedOperationException(); }
-
-    public static IEntityPlayerSP getPlayer() { throw new UnsupportedOperationException(); }
-
-    public static IPlayerControllerMP getPlayerController() { throw new UnsupportedOperationException(); }
-
+public interface IWorldClient extends IWorld {
 }

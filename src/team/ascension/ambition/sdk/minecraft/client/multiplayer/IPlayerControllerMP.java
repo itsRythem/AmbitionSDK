@@ -20,21 +20,35 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.accessor;
+package team.ascension.ambition.sdk.minecraft.client.multiplayer;
 
-import team.ascension.ambition.sdk.IClient;
-import team.ascension.ambition.sdk.minecraft.client.entity.IEntityPlayerSP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IPlayerControllerMP;
-import team.ascension.ambition.sdk.minecraft.client.multiplayer.IWorldClient;
+import team.ascension.ambition.sdk.minecraft.entity.IEntity;
+import team.ascension.ambition.sdk.minecraft.entity.player.IEntityPlayer;
 
-public final class Accessor {
+public interface IPlayerControllerMP {
+    boolean isSpectator();
 
-    public static IClient getClient() { throw new UnsupportedOperationException(); }
+    boolean shouldDrawHUD();
 
-    public static IWorldClient getWorld() { throw new UnsupportedOperationException(); }
+    void resetBlockRemoving();
 
-    public static IEntityPlayerSP getPlayer() { throw new UnsupportedOperationException(); }
+    void syncCurrentPlayItem();
 
-    public static IPlayerControllerMP getPlayerController() { throw new UnsupportedOperationException(); }
+    void attackEntity(IEntityPlayer player, IEntity target);
 
+    void attackEntity(IEntity target);
+
+    boolean gameIsSurvivalOrAdventure();
+
+    boolean isNotCreative();
+
+    boolean isInCreativeMode();
+
+    boolean extendedReach();
+
+    boolean isRidingHorse();
+
+    boolean isSpectatorMode();
+
+    boolean getIsHittingBlock();
 }
