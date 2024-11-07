@@ -50,7 +50,7 @@ import team.ascension.ambition.sdk.IClient;
  * }
  * }</pre>
  */
-public interface Plugin {
+public interface IPlugin {
 
     /**
      * Called when the plugin is loaded into the client. This method should contain
