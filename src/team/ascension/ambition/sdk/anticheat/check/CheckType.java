@@ -20,53 +20,25 @@
  * SOFTWARE.
  */
 
-package team.ascension.ambition.sdk.util.enums;
+package team.ascension.ambition.sdk.anticheat.check;
 
 import team.ascension.ambition.sdk.util.jplus.INamedObject;
 
-/* if you make a anticheat specific bypass for an anticheat not here, just add it :) */
-public enum AntiCheat implements INamedObject {
+public enum CheckType implements INamedObject {
 
-    UNKNOWN("Unknown"),
-    ANY("Any"),
-    NONE("None"),
-    NCP("NCP"),
-    UPDATED_NCP("Updated NCP"),
-    MATRIX("Matrix"),
-    VULCAN("Vulcan"),
-    ANTI_AURA_1("Anti Aura 1.0"),
-    ANTI_AURA_2("Anti Aura 2.0"),
-    NEGATIVITY_1("Negativity 1.0"),
-    NEGATIVITY_2("Negativity 2.0"),
-    WRAITH("Wraith"),
-    HAWK("Hawk"),
-    FREQUENCY("Frequency"),
-    KAURI("Kauri"),
-    MEDUSA("Medusa"),
-    ALICE("Alice"),
-    INTAVE("Intave"),
-    BUZZ("Buzz"),
-    VERUS("Verus"),
-    HORIZON("Horizon"),
-    HADES("Hades"),
-    FOX_ADDITION("Fox Addition"),
-    ACR("ACR"),
-    NESS("Ness"),
-    GODS_EYE("Gods Eye"),
-    AAC_5("AAC 5.0"),
-    AAC_3("AAC 3.0"),
-    SPARTAN("Spartan"),
-    POLAR("Polar"),
-    ASTRO("Astro"),
-    WATCHDOG("Watchdog"),
-    KARHU("Karhu"),
-    NESS_RELOADED("Ness Reloaded"),
-    NOVA("Nova"),
-    SPARKY("Sparky"),
-    GRIM("Grim");
+    AIM("Aim"),
+    KILL_AURA("Kill Aura"),
+    BAD_PACKET("Bad Packet"),
+    SCAFFOLD("Scaffold"),
+    AUTO_BLOCK("Auto Block"),
+    INVALID("Invalid"),
+    SPEED("Speed"),
+    OTHER_MOVEMENT("Other Movement"),
+    FLIGHT("Flight"),
+    EXPLOIT("Exploit");
 
     public final String name;
-    AntiCheat(final String name) {
+    CheckType(final String name) {
         this.name = name;
     }
 
