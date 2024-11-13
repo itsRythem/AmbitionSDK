@@ -33,7 +33,7 @@ public interface IFileHandler extends IPacketHandler {
 
     List<FileEntry> listFiles(final String path);
 
-    Map<String, String> getFiles(final String path);
+    List<FileEntry> getFiles(final String path);
 
     int getMaxStorage();
 

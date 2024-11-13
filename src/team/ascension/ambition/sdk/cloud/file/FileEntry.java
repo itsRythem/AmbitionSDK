@@ -24,12 +24,13 @@ package team.ascension.ambition.sdk.cloud.file;
 
 public final class FileEntry {
 
-    private final String name, path, directory;
+    private final String name, path, directory, contents;
     private final boolean isDirectory;
-    public FileEntry(final String name, final String path, final String directory, final boolean isDirectory) {
+    public FileEntry(final String name, final String path, final String directory, final String contents, final boolean isDirectory) {
         this.name = name;
         this.path = path;
         this.directory = directory;
+        this.contents = contents;
         this.isDirectory = isDirectory;
     }
 
@@ -39,6 +40,10 @@ public final class FileEntry {
 
     public String getPath() {
         return this.path;
+    }
+
+    public String getContents() {
+        return this.contents;
     }
 
     public String getDirectory() {
