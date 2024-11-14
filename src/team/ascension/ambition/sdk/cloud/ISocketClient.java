@@ -28,7 +28,7 @@ public interface ISocketClient {
 
     void initialize();
 
-    void connect(final String host, final int port);
+    boolean connect(final String host, final int port);
     void disconnect();
     boolean isConnected();
 
