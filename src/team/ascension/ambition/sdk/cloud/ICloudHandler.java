@@ -27,6 +27,7 @@ import team.ascension.ambition.sdk.cloud.file.IFileHandler;
 import team.ascension.ambition.sdk.cloud.misc.IAssetHandler;
 import team.ascension.ambition.sdk.cloud.misc.IReportHandler;
 import team.ascension.ambition.sdk.cloud.misc.ISpotifyHandler;
+import team.ascension.ambition.sdk.cloud.misc.product.IProductHandler;
 import team.ascension.ambition.sdk.cloud.misc.stats.IStatisticHandler;
 import team.ascension.ambition.sdk.cloud.misc.cosmetic.ICosmeticHandler;
 import team.ascension.ambition.sdk.cloud.request.IRequestHandler;
@@ -48,5 +49,6 @@ public interface ICloudHandler {
     IFriendHandler getFriendHandler();
     IStatisticHandler getStatHandler();
     IPartyHandler getPartyHandler();
+    IProductHandler getProductHandler();
 
 }
