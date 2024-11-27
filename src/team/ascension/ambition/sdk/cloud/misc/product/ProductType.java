@@ -22,33 +22,17 @@
 
 package team.ascension.ambition.sdk.cloud.misc.product;
 
-import team.ascension.ambition.sdk.cloud.user.IUser;
+public enum ProductType {
+    CONFIG("Config"),
+    SCRIPT("Script"),
+    PLUGIN("Plugin");
 
-import java.util.Collection;
+    final String name;
+    ProductType(String name) {
+        this.name = name;
+    }
 
-public interface IProduct {
-
-    int getID();
-
-    void createVersion(String name, byte[] content);
-
-    IUser getOwner();
-
-    ProductType getType();
-
-    String getName();
-
-    String getShortDescription();
-
-    String getDescription();
-
-    float getPrice();
-
-    Collection<ProductVersion> getVersions();
-
-    ProductVersion getVersion(int release);
-
-    ProductVersion getLatestVersion();
-
-    boolean isOwned();
+    public String getName() {
+        return name;
+    }
 }

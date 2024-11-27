@@ -25,16 +25,13 @@ package team.ascension.ambition.sdk.cloud.misc.product;
 import com.google.gson.JsonObject;
 
 public class ProductVersion {
-    private int release, downloads, visibility;
-    private float price;
-    private long timestamp;
-    private String version;
+    private final int release, visibility;
+    private final long timestamp;
+    private final String version;
     
     public ProductVersion(JsonObject object) {
         this.release = object.get("release").getAsInt();
-        this.downloads = object.get("downloads").getAsInt();
         this.visibility = object.get("visibility").getAsInt();
-        this.price = object.get("price").getAsFloat();
         this.timestamp = object.get("timestamp").getAsLong();
         this.version = object.get("version").getAsString();
     }
@@ -43,16 +40,8 @@ public class ProductVersion {
         return release;
     }
 
-    public int getDownloads() {
-        return downloads;
-    }
-
     public int getVisibility() {
         return visibility;
-    }
-
-    public float getPrice() {
-        return price;
     }
 
     public long getTimestamp() {

@@ -34,4 +34,8 @@ public interface IProductHandler extends IPacketHandler {
 
     Collection<IProduct> getProducts();
 
+    void createProduct(String name, String shortDescription, String description, float price, ProductType type);
+
+    void createVersion(int product, String version, byte[] content);
+
 }
