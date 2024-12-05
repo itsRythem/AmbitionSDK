@@ -24,31 +24,15 @@ package team.ascension.ambition.sdk.cloud.misc.product;
 
 import com.google.gson.JsonObject;
 
-public class ProductVersion {
-    private final int release, visibility;
-    private final long timestamp;
-    private final String version;
-    
-    public ProductVersion(JsonObject object) {
-        this.release = object.get("release").getAsInt();
-        this.visibility = object.get("visibility").getAsInt();
-        this.timestamp = object.get("timestamp").getAsLong();
-        this.version = object.get("version").getAsString();
-    }
+public interface IProductVersion {
 
-    public int getRelease() {
-        return release;
-    }
+    void requestContent();
 
-    public int getVisibility() {
-        return visibility;
-    }
+    int getRelease();
 
-    public long getTimestamp() {
-        return timestamp;
-    }
+    int getVisibility();
 
-    public String getVersion() {
-        return version;
-    }
+    long getTimestamp();
+
+    String getVersion();
 }

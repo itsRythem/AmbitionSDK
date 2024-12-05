@@ -28,7 +28,7 @@ import java.util.Collection;
 
 public interface IProductHandler extends IPacketHandler {
 
-    void requestAll();
+    void requestAllProducts();
 
     IProduct getProduct(int id);
 

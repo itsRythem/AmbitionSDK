@@ -44,11 +44,11 @@ public interface IProduct {
 
     float getPrice();
 
-    Collection<ProductVersion> getVersions();
+    Collection<IProductVersion> getVersions();
 
-    ProductVersion getVersion(int release);
+    IProductVersion getVersion(int release);
 
-    ProductVersion getLatestVersion();
+    IProductVersion getLatestVersion();
 
     boolean isOwned();
 }
