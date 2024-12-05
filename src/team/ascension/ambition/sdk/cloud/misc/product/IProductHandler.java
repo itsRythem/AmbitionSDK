@@ -38,4 +38,6 @@ public interface IProductHandler extends IPacketHandler {
 
     void createVersion(int product, String version, byte[] content);
 
+    void requestReleaseContent(int product, int release);
+
 }
